@@ -17,7 +17,7 @@ screen = pygame.display.set_mode((config["screen_width"], config["screen_height"
 pygame.display.set_caption("NotFlappyBird")
 clock = pygame.time.Clock()
 
-background = pygame.image.load("bg.png").convert_alpha()
+background = pygame.image.load("Assets/bg.png").convert_alpha()
 
 text_font = pygame.font.Font(None, 30)
 start_game_text_surf = text_font.render("Press Space To Start", False, "Red")
@@ -26,7 +26,7 @@ start_game_text_rect = start_game_text_surf.get_rect(center=(config["screen_widt
 end_game_text_surf = text_font.render("Game Over!! Press Space to Start Again", False, "Red")
 end_game_text_rect = end_game_text_surf.get_rect(center=(config["screen_width"] / 2, (config["screen_height"] / 2) - 25))
 
-bird_surf = pygame.transform.scale_by(pygame.image.load("bird.png"), 0.075).convert_alpha()
+bird_surf = pygame.transform.scale_by(pygame.image.load("Assets/bird.png"), 0.075).convert_alpha()
 bird_rect = bird_surf.get_rect(center=(100, (config["screen_height"] / 2) - 25))
 
 score = 0
@@ -36,10 +36,10 @@ class pipeSet:
     def __init__(self):
         self.out = False
         self.pipe_coordinates = self.get_rand_coor()
-        self.top_surf = pygame.transform.scale_by(pygame.image.load("pipet.png"), config["pipe_scale"]).convert_alpha()
+        self.top_surf = pygame.transform.scale_by(pygame.image.load("Assets/pipet.png"), config["pipe_scale"]).convert_alpha()
         self.top_rect = self.top_surf.get_rect(midbottom=self.pipe_coordinates["top"])
 
-        self.bottom_surf = pygame.transform.scale_by(pygame.image.load("pipeb.png"), config["pipe_scale"]).convert_alpha()
+        self.bottom_surf = pygame.transform.scale_by(pygame.image.load("Assets/pipeb.png"), config["pipe_scale"]).convert_alpha()
         self.bottom_rect = self.bottom_surf.get_rect(midtop=self.pipe_coordinates["bottom"])
 
     def get_rand_coor(self):
